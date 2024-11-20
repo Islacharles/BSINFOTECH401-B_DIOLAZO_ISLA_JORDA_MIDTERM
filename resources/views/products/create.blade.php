@@ -11,13 +11,17 @@
         <h3 class = "text-white text-center">Product Inventory</h3>
     </div>
     <div class="container">
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="col-md-10 d-flex justify-content-end">
+            <a href="{{ route('products.index') }}" class="btn btn-dark">Back</a>
+        </div>
       <div class="row d-flex justify-content-center">
         <div class="col-md-10">
           <div class="card borde-0 shadow-lg my-4">
             <div class="card-header bg-dark">
               <h3 class="text-white">Create Product</h3>
             </div>
-            <form action="{{ route('products.store') }}" method="post">
+            <form enctype="multipart/form-data" action="{{ route('products.store') }}" method="post">
               @csrf
               <div class="card-body">
                 <div class="mb-3">
@@ -49,7 +53,7 @@
 
                 <div class="mb-3">
                   <label for="" class="form-label h5">description</label>
-                  <textarea class ="form-control" name="description" cols="30" rows="5" value="{{ old('description') }}"></textarea>
+                  <textarea class ="form-control" name="description" cols="30" rows="5">{{ old('description') }}</textarea>
                 </div>
 
                 <div class="mb-3">
